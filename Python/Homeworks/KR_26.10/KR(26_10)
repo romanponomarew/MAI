@@ -1,0 +1,29 @@
+db = {
+    "person":{
+        "name": ["Vladimir","Mariya"],
+        "lname": ["Ivanov","Sidorova"],
+        "inn": ["123","332"]
+    },
+    "employment":{
+        "firm":["Firm 1","Firm 2","Firm 2","Firm 3"],
+        "person_inn":["123","123","332","332"]
+    }
+}
+
+for i in range(0, len(db["person"]["inn"])):
+    inn = db["person"]["inn"][i]
+
+    for j in range(0, len(db["employment"]["person_inn"])):
+        if inn == db["employment"]["person_inn"][j]:
+            a = (str(db["person"]["name"][i]) + "; "  + str(db["person"]["lname"][i]) + "; " + str(inn) + "; ") \
+                + db["employment"]["firm"][j] + "; " + inn
+            print(a)
+
+#qwery="person.inn=employment.person_inn"
+
+# res ="""
+# Vladimir; Ivanov; 123; Firm 1; 123
+# Vladimir; Ivanov; 123; Firm 2; 123
+# Mariya; Sidorova; 332; Firm 2; 332
+# Mariya; Sidorova; 332; Firm 3; 332
+# """
